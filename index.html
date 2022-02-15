@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+</head>
+<body>
+
+  <div class="layout">
+
+    <div class="blue-card">
+      <div class="profile-card">
+        <img class="profile-photo" src="images/image-jeremy.png" alt="jeremy profile photo">
+          <p>Report for</p>
+          <h2>Jeremy Robson</h2>
+      </div>
+
+      <div class="select-style">
+        <button id="daily" class="dailyBtn">Daily</a>
+        <button id="weekly">Weekly</a> 
+        <button id="monthly">Monthly</a> 
+      </div>
+    </div>
+
+    <div id="work" class="dashboard-style">
+      <div class="dashboard-card">
+        <div class="activity">
+          <h3>Work</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">5hrs</h1>
+          <p class="previous">Previous - 7hrs</p>
+        </div>
+      </div>  
+    </div>
+
+    <div id="play" class="dashboard-style">
+      <div class="dashboard-card">
+        <div class="activity">
+          <h3>Play</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">1hr</h1>
+          <p class="previous">Previous - 2hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="study" class="dashboard-style">
+      <div class="dashboard-card">
+        <div class="activity">
+          <h3>Study</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">0hrs</h1>
+          <p class="previous">Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="exercise" class="dashboard-style">
+      <div class="dashboard-card">
+        <div class="activity">
+          <h3>Exercise</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">1hr</h1> 
+          <p class="previous">Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="social" class="dashboard-style">
+      <div class="dashboard-card">  
+        <div class="activity">
+          <h3>Social</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">1hr</h1>
+          <p class="previous">Previous - 3hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="selfCare" class="dashboard-style">
+      <div class="dashboard-card">
+        <div class="activity">
+          <h3>Self Care</h3>
+          <img src="images/icon-ellipsis.svg" alt="3 dots">
+        </div>
+        <div class="content">
+          <h1 class="current">0hrs</h1>
+          <p class="previous">Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/BeaReis">Beatriz Reis</a>.
+    </p>
+  </div>
+  
+  <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
