@@ -1,6 +1,6 @@
-
 const button = $('button');
 
+/* This function sets hour String to plural or singular */
 function hoursFormat(hours) {
     if (hours === 1) {
         return "hr"
@@ -9,6 +9,7 @@ function hoursFormat(hours) {
     }
 }
 
+/* This function formats the 'previous' spent hours String according to selected button */
 function previousFormat(previous) {
     if (previous === 'daily') {
         return "Yesterday - "
@@ -35,40 +36,23 @@ button.click(function(event) {
         if (this.id !== clickedBtn) {
             $(`#${this.id}`).removeClass('selectedBtn');
         } else {
+
             /* Fetches the data from json file */
             fetch('data.json')
             .then((res) => res.json())
             .then((data) => {
                 data.forEach(element => {
 
+                    /* These variables receives the current and previous time spent of the 'data.json' element. Their values are
+                    redefined each time the element changes. */
                     var hoursDataCurrent = element.timeframes[clickedBtn].current
                     var hoursDataPrevious = element.timeframes[clickedBtn].previous
 
-                    switch(element.title) {
-                        case "Work": 
-                            $('#work h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent)); 
-                            $('#work p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataCurrent)); 
-                            break;
-                        case "Play": 
-                            $('#play h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent));
-                            $('#play p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious));
-                            break;
-                        case "Study": 
-                            $('#study h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent));
-                            $('#study p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious));
-                            break;
-                        case "Exercise": 
-                            $('#exercise h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent));
-                            $('#exercise p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious));
-                            break;
-                        case "Social": 
-                            $('#social h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent));
-                            $('#social p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious));
-                            break;
-                        default: 
-                            $('#selfCare h1').text(hoursDataCurrent + hoursFormat(hoursDataCurrent));
-                            $('#selfCare p').text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious));
-                    }
+                    /* Since the 'forEach' loop will pass through each element in data.json, element.title can be used with template
+                    string to set the data into current element without the need of a 'switch' or 'if else' conditional */
+                    $(`#${element.title.toLowerCase()} h1`).text(hoursDataCurrent + hoursFormat(hoursDataCurrent)); 
+                    $(`#${element.title.toLowerCase()} p`).text(previousFormat(clickedBtn) + hoursDataPrevious + hoursFormat(hoursDataPrevious)); 
+
                 });
             });
         }
